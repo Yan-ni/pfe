@@ -1,0 +1,27 @@
+.navbar{
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--black-coffe);
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+li{
+    background-color: var(--black-coffe);
+}
+
+a{
+    transition: 300ms ease-in-out;
+}
+
+a:hover{
+    background-color: lightblue;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--black-coffe);
+}
