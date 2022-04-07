@@ -27,12 +27,7 @@ const { sequelize } = require('./models');
 app.startDatabase = async () => {
   // if force is set to true the database will create all tables all over again
   await sequelize.sync({ force: false });
-  if (process.env.NODE_ENV === 'development' && !fs.existsSync(path.join(__dirname, '..', 'database.sqlite')))
-  {
-    await sequelize.seed();
-  } else if (process.env.NODE_ENV === 'test') {
-    await sequelize.seed();
-  }
+  await sequelize.seed();
   await sequelize.authenticate();
 };
 
