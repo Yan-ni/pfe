@@ -18,7 +18,7 @@ class APIStore {
 
   loadFournisseurs() {
     axios
-      .get('http://localhost:3000/api/fournisseur')
+      .get('/api/fournisseur')
       .then(({data}) => this.setFournisseurs(data));
   }
 }
