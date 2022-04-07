@@ -27,7 +27,7 @@ const { sequelize } = require('./models');
 app.startDatabase = async () => {
   // if force is set to true the database will create all tables all over again
   await sequelize.sync({ force: false });
-  await sequelize.seed();
+  // await sequelize.seed();
   await sequelize.authenticate();
 };
 
