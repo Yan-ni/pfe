@@ -2,7 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 
 const app = express();
-const { sequelize } = require('./models');
+
+require('dotenv').config();
 
 // middlewares
 app.use(express.json());
