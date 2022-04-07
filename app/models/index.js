@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { Sequelize, DataTypes } = require('sequelize');
-const databaseConfig = require('../config/database.config');
+const databaseConfig = require('../config/database/config');
 
 const sequelize = new Sequelize(
   process.env.NODE_ENV === 'development'
@@ -22,6 +22,8 @@ fs
 Object
   .keys(db)
   .forEach((modelName) => db[modelName].associate && db[modelName].associate(db));
+
+sequelize.seed = require('../config/database/seeds')(db);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
