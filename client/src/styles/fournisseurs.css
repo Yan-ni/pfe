@@ -1,0 +1,48 @@
+.Fournisseurs_Container{
+    margin: auto;
+    width:  99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table{
+    border: 1px white solid;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.table__header{
+    display: grid;
+    grid-template-columns: 5% 20% 20% 40% 15%;
+    width: 100%;
+    padding: 3px 0;
+}
+
+.header__item{
+    text-transform: uppercase;
+}
+
+.table__row{
+    display: grid;
+    grid-template-columns: 5% 20% 20% 40% 15%;
+    padding: 3px 0;
+}
+
+.ta_start{
+    text-align: start;
+}
+
+.table__col{
+    margin: 15px 15px 15px 25px;
+}
+
+.btn{
+    text-align: center;
+    border: 1px white solid;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
