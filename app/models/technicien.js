@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type: DataTypes.STRING(50),
-    }
+    },
   });
 
   Technicien.associate = (models) => {
     Technicien.belongsTo(models.Fournisseur, { foreignKey: 'id_fournisseur' });
-  }
-  
+  };
+
   return Technicien;
 };

@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   Contrat.associate = (models) => {
     Contrat.belongsTo(models.Plateforme, { foreignKey: 'id_plateforme' });
     Contrat.belongsTo(models.Fournisseur, { foreignKey: 'id_fournisseur' });
-  }
-  
+  };
+
   return Contrat;
 };

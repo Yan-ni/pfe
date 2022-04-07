@@ -8,23 +8,23 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     nom: {
-      type: DataTypes.STRING(60)
+      type: DataTypes.STRING(60),
     },
     date_mise_en_marche: {
-      type: DataTypes.DATEONLY
+      type: DataTypes.DATEONLY,
     },
     severite: {
-      type: DataTypes.STRING(1)
+      type: DataTypes.STRING(1),
     },
     date_fin_service: {
-      type: DataTypes.DATEONLY
-    }
+      type: DataTypes.DATEONLY,
+    },
   });
 
   Equipement.associate = (models) => {
     Equipement.belongsTo(models.Site, { foreignKey: 'id_site' });
     Equipement.belongsTo(models.Plateforme, { foreignKey: 'id_plateforme' });
-  }
+  };
 
   return Equipement;
 };

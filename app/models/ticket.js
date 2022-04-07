@@ -20,10 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
     },
     observation: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
     },
     observation_IGE: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
     },
   });
 
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     Ticket.belongsTo(models.Equipement, { foreignKey: 'num_serie_equipement' });
     Ticket.belongsTo(models.Plateforme, { foreignKey: 'id_plateforme' });
     Ticket.belongsTo(models.IGE, { foreignKey: 'id_IGE' });
-  }
-  
+  };
+
   return Ticket;
 };

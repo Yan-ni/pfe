@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     nom: {
       type: DataTypes.STRING(50),
-    }
+    },
   });
 
   return Site;

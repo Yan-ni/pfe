@@ -15,6 +15,7 @@ app.use('/api', routes);
 
 // error handler middlewares
 const errorHandler = require('./middlewares/errorHandler');
+
 app.use(errorHandler);
 
 module.exports = app;
