@@ -9,5 +9,14 @@ module.exports = {
     } catch (error) {
       next(error);
     }
+  },
+  post: async (req, res, next) => {
+    try {
+      const dbRes = await Fournisseur.create(req.body);
+
+      res.status(201).json(dbRes);
+    } catch (error) {
+      next(error);
+    }
   }
 };
