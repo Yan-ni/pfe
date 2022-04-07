@@ -3,11 +3,7 @@ const path = require('path');
 const { Sequelize, DataTypes } = require('sequelize');
 const databaseConfig = require('../config/database/config');
 
-const sequelize = new Sequelize(
-  process.env.NODE_ENV === 'development'
-    ? databaseConfig.development
-    : databaseConfig.production,
-);
+const sequelize = new Sequelize(databaseConfig[process.env.NODE_ENV]);
 
 const db = {};
 

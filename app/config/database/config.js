@@ -3,6 +3,10 @@ module.exports = {
     dialect: 'sqlite',
     storage: './database.sqlite',
   },
+  test: {
+    dialect: 'sqlite',
+    storage: 'database_test.sqlite',
+  },
   production: {
     dialect: 'mysql',
     host: process.env.DB_HOST,
