@@ -11,6 +11,7 @@ function ListFournisseur() {
 
   useEffect(() => {
     APIStore.loadFournisseurs();
+    console.log(JSON.stringify(APIStore.fournisseurs, null, 4));
   }, []);
 
   return (
@@ -23,6 +24,7 @@ function ListFournisseur() {
         <div className="header__item table__col btn btn__ajouter">AJOUTER</div>
       </div>
       {
+        APIStore.fournisseurs.length &&
         APIStore.fournisseurs.map(({id, nom, prenom, adresse}) =>
           <div className="table__row">
             <div className="table__data table__col ta_start">{id}</div>
