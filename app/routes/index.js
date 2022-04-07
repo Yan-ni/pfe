@@ -1,10 +1,14 @@
 const express = require('express');
-const route = express.Router();
+const fs = require('fs');
+const path = require('path');
 
-route.get('/', (req, res, next) => {
-  res.json({
-    message: 'testing api'
+const router = express.Router();
+
+fs
+  .readdirSync(__dirname)
+  .filter((fileName) => fileName !== 'index.js')
+  .forEach((fileName) => {
+    router.use(`/${fileName.slice(0, -3)}`, require(path.join(__dirname, fileName)));
   });
-});
 
-module.exports = route;
+module.exports = router;
