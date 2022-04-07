@@ -1,4 +1,4 @@
-module.exports = ({ Fournisseur, IGE, Plateforme, Site, Panne, Contrat, Equipement, Technicien }) => () => Promise.all([
+module.exports = ({ Fournisseur, IGE, Plateforme, Site, Panne, Contrat, Equipement, Technicien, Ticket }) => () => Promise.all([
   Fournisseur.create({
     id: "123",
     nom: "test fournisseur",
@@ -26,26 +26,42 @@ module.exports = ({ Fournisseur, IGE, Plateforme, Site, Panne, Contrat, Equipeme
     nom_logiciel: "un logiciel"
   }),
 ])
-.then(([fournisseur, ige, plateforme, site, panne]) => Promise.all([
-  Contrat.create({
-    reference: "123456789A",
-    id_fournisseur: fournisseur.id,
-    id_plateforme: plateforme.id
-  }),
-  Equipement.create({
-    num_serie: "123456789ABCDEF",
-    FRU: "FRU-test",
-    nom: "nom de l'equipement",
-    severite: "2",
-    id_plateforme: plateforme.id,
-    id_site: site.id
-  }),
-  Technicien.create({
-    id: "123",
-    nom: "tech",
-    prenom: "bon",
-    telephone: "0660606060",
-    email: "technicien@email.com",
-    id_fournisseur: fournisseur.id
-  }),
-]));
+.then(([fournisseur, ige, plateforme, site, panne]) => {
+  return Promise.all([
+    Contrat.create({
+      reference: "123456789A",
+      id_fournisseur: fournisseur.id,
+      id_plateforme: plateforme.id
+    }),
+    Equipement.create({
+      num_serie: "123456789ABCDEF",
+      FRU: "FRU-test",
+      nom: "nom de l'equipement",
+      severite: "2",
+      id_plateforme: plateforme.id,
+      id_site: site.id
+    }),
+    Technicien.create({
+      id: "123",
+      nom: "tech",
+      prenom: "bon",
+      telephone: "0660606060",
+      email: "technicien@email.com",
+      id_fournisseur: fournisseur.id
+    }),
+  ]).then(proRet => [fournisseur, ige, plateforme, ...proRet]);
+})
+.then(([fournisseur, ige, plateforme, contrat, equipement, technicien]) => Ticket.create({
+  numero: "123456789A",
+
+  heure_signalisation: 15,
+  heure_reponse: 16,
+  resultat_interviention: "ceci est un resultat d'intervention",
+  observation: "ceci est une observation faite par le technicien",
+  observation_IGE: "ceci est une observation faite par l'IGE",
+  id_plateforme: plateforme.id,
+  id_IGE: ige.id,
+  id_technicien: technicien.id,
+  id_fournisseur: fournisseur.id,
+  num_serie_equipement: equipement.num_serie
+}));
