@@ -32,9 +32,21 @@ app.use(errorHandler);
 const { sequelize } = require('./models');
 
 app.startDatabase = async () => {
-  // if force is set to true the database will create all tables all over again
-  await sequelize.sync({ force: false });
-  // await sequelize.seed();
+  if (process.env.NODE_ENV === 'test') {
+    await sequelize.sync({ force: true });
+    await sequelize.seed();
+  }
+
+  if (process.env.NODE_ENV === 'development') {
+    const dbConfig = require('./config/database/config');
+    const dbExist = fs.existsSync(path.join(__dirname, '..', dbConfig.development.storage));
+    await sequelize.sync({ force: false });
+
+    if (!dbExist) await sequelize.seed();
+  }
+
+  if (process.env.NODE_ENV === 'production') await sequelize.sync({ force: false });
+
   await sequelize.authenticate();
 };
 
