@@ -6,6 +6,7 @@ module.exports = {
   test: {
     dialect: 'sqlite',
     storage: 'database_test.sqlite',
+    logging: false,
   },
   production: {
     dialect: 'mysql',
