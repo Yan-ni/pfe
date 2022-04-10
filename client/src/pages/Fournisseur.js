@@ -1,12 +1,9 @@
-import ListFournisseur from "../components/ListFournisseur";
-import "../styles/fournisseurs.css"
-
 function Fournisseur() {
-    return ( 
-        <div className="Fournisseurs_Container" >
-            <ListFournisseur />
-        </div>
-     );
+  return (
+    <div>
+      <h1>Fournisseur</h1>
+    </div>
+  );
 }
 
 export default Fournisseur;

@@ -1,0 +1,98 @@
+:root {
+  /*  Colors  */
+  --Dark-color-500: #131217;
+  --Dark-color-400: #211F27;
+  --Dark-color-300: #2B2A32;
+  --Dark-color-200: #3D3B45;
+  --primary-color: #7048EC;
+  --secondary-color: #D9D7DB;
+  --tritary-color: #B2B1B4;
+
+  /*  Fonts  */
+  --poppins: Poppins, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semiBold: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-width: 100vh;
+}
+
+/* Typography */
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/poppins/Poppins-Regular.ttf) format("ttf");
+  font-weight: var(--font-weight-regular);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/poppins/Poppins-Medium.ttf) format("ttf");
+  font-weight: var(--font-weight-medium);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/poppins/Poppins-SemiBold.ttf) format("ttf");
+  font-weight: var(--font-weight-semiBold);
+}
+
+h1, h2, h3, h4, h5, h6, p, label, span {
+  font-family: var(--poppins);
+}
+
+h1, h2, h3 {
+  font-weight: var(--font-weight-semiBold);
+}
+
+h4, h5, h6 {
+  font-weight: var(--font-weight-medium);
+}
+
+p, label, span {
+  font-weight: var(--font-weight-regular);
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+}
+
+label {
+  font-size: 15px;
+}
+
+span {
+  font-size: 14px;
+}
