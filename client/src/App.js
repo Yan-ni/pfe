@@ -1,6 +1,6 @@
 import "./assets/styles/style.css";
 import { Routes, Route } from "react-router-dom";
-import { Fournisseur, Technicien, Equipement, Contrat, PlateForm, Ticket, Home } from './pages';
+import { Fournisseur, Technicien, Equipement, Contrat, PlateForm, Ticket } from './pages';
 import { APIStoreProvider } from "./APIStoreContext";
 
 function App() {
