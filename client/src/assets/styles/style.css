@@ -21,9 +21,11 @@
   box-sizing: border-box;
 }
 
-body {
+.App {
   width: 100%;
-  min-width: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
 /* Typography */
