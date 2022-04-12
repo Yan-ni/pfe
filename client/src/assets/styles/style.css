@@ -7,6 +7,7 @@
   --primary-color: #7048EC;
   --secondary-color: #D9D7DB;
   --tritary-color: #B2B1B4;
+  --quaternary-color: #ac91ff;
 
   /*  Fonts  */
   --poppins: Poppins, sans-serif;
@@ -122,4 +123,56 @@ label {
 
 span {
   font-size: 14px;
+}
+
+/* Utility */
+
+.d-none {
+  display: none;
+}
+
+/* Globals */
+.button {
+  color: #FFF;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+/* button */
+.button:hover {
+  background-color: var(--quaternary-color);
+  cursor: pointer;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+.secondary-btn {
+  background: var(--secondary-color);
+  color: var(--Dark-color-400);
+}
+
+/* input */
+.input label {
+  margin-bottom: 10px;
+  display: block;
+  color: #FFF;
+}
+
+.input input {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--Dark-color-500);
+  color: #FFF;
+  border: 1px solid var(--tritary-color);
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.input input::placeholder {
+  color: var(--tritary-color);
 }
