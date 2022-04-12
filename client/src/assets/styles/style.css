@@ -28,6 +28,7 @@
   height: 100vh;
   display: flex;
   flex-direction: row;
+  background-color: var(--Dark-color-400);
 }
 
 /* Typography */
