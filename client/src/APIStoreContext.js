@@ -1,11 +1,11 @@
 import { createContext } from "react";
-import APIStore from "./Stores/APIStore"; 
+import fournisseurStore from './Stores/fournisseurStore';
 
 export const APIStoreContext = createContext();
 
 export function APIStoreProvider({ children }) {
   return (
-    <APIStoreContext.Provider value={APIStore}>
+    <APIStoreContext.Provider value={{fournisseurStore}}>
       {children}
     </APIStoreContext.Provider>
   );
