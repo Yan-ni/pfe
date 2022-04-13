@@ -1,8 +1,10 @@
-import Fournisseur from "./Fournisseur";
-import Technicien from "./Technicien";
-import Equipement from "./Equipement";
-import Contrat from "./Contrat";
-import PlateForm from "./PlateForm";
-import Ticket from "./Ticket";
+import Fournisseur from './Fournisseur.jsx';
+import Technicien from './Technicien.jsx';
+import Equipement from './Equipement.jsx';
+import Contrat from './Contrat.jsx';
+import PlateForm from './PlateForm.jsx';
+import Ticket from './Ticket.jsx';
 
-export { Fournisseur, Technicien, Equipement, Contrat, PlateForm, Ticket }
+export {
+	Fournisseur, Technicien, Equipement, Contrat, PlateForm, Ticket,
+};
