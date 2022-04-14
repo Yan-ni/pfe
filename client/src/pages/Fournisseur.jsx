@@ -4,9 +4,11 @@ import AddFournisseur from "../components/fournisseur/AddFournisseur";
 import "../assets/styles/fournisseur.css";
 import { observer } from "mobx-react";
 import { APIStoreContext } from "../APIStoreContext";
+import SearchInput from "../components/SearchInput";
 
 function Fournisseur() {
   const [addFournisseurModalDisplay, setAddFournisseurModalDisplay] = useState(false);
+  const [searchText, setSearchText] = useState();
 
   const { fournisseurStore } = useContext(APIStoreContext);
 
@@ -22,6 +24,7 @@ function Fournisseur() {
       <AddFournisseur
         addFournisseurModalDisplay={addFournisseurModalDisplay}
         setAddFournisseurModalDisplay={setAddFournisseurModalDisplay} />
+      <SearchInput searchParams={["nom", "email"]} onChange={(e) => setSearchText(e.target.value)}/>
     </div>
   );
 }
