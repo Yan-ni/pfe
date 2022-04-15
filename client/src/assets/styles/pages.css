@@ -1,0 +1,51 @@
+.pageHeader {
+  padding: 30px;
+}
+
+.pageHeader h1 {
+  color: #FFF;
+}
+
+.pageHeader button {
+  margin-top: 25px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-groupe2Technicien {
+  display: flex;
+  gap: 20px;
+}
+
+.input-groupe2Technicien > div:nth-child(1) {
+  flex: 2;
+}
+
+.input-groupe2Technicien > div:nth-child(2) {
+  flex: 5;
+}
+
+.input-groupe2Technicien > div:nth-child(3) {
+  flex: 2;
+}
+
+.input-groupe {
+  display: flex;
+  gap: 20px;
+}
+
+.input-groupe > div:nth-child(1) {
+  flex: 2;
+}
+
+.input-groupe > div:nth-child(2) {
+  flex: 3;
+}
+
+.input-groupe > div:nth-child(3) {
+  flex: 4;
+}
