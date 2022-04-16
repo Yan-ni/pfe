@@ -50,7 +50,7 @@ export default function AddEquipement({ addEquipementModalDisplay, setAddEquipem
       </div>
       <div className="input-groupe">
        <Input
-          dataListOptions={["012","152","001","160"]}
+          dataListOptions={["01","12","02","15"]}
           list="datalist"
           id="Severite"
           placeholder="02"

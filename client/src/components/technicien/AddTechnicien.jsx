@@ -54,7 +54,7 @@ export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnic
           prenom
         </Input>
       </div>
-      <div className="input-groupe2Technicien">
+      <div className="input-groupe-second">
       <Input
           id="telephone"
           placeholder="0555451157"

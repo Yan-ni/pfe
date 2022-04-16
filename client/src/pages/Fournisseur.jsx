@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Button } from "../components/basicComponents";
 import AddFournisseur from "../components/fournisseur/AddFournisseur";
-import "../assets/styles/pages.css";
 import { observer } from "mobx-react";
 import { APIStoreContext } from "../APIStoreContext";
 import SearchInput from "../components/SearchInput";
@@ -18,7 +17,7 @@ function Fournisseur() {
 
   return (
   <>
-            <div className="pageHeader">
+            <div className="page">
               <h1>Fournisseur</h1>
               <Button onClick={() => setAddFournisseurModalDisplay(true)}>Ajouter un fournisseur</Button>
 
