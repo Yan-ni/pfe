@@ -18,7 +18,7 @@ function Fournisseur() {
   return (
   <>
             <div className="page">
-              <h1>Fournisseur</h1>
+              <h1>Fournisseurs</h1>
               <Button onClick={() => setAddFournisseurModalDisplay(true)}>Ajouter un fournisseur</Button>
 
               <AddFournisseur

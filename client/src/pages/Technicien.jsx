@@ -9,9 +9,15 @@ function Technicien() {
   const [addTechnicienModalDisplay, setAddTechnicienModalDisplay] = useState(false);
   const [searchText, setSearchText] = useState();
 
+  const { technicienStore } = useContext(APIStoreContext);
+
+  useEffect(() => {
+    technicienStore.loadTechniciens();
+  }, []);
+
   return (  <>
               <div className="page">        
-              <h1>Technicien</h1>
+              <h1>Techniciens</h1>
               <Button onClick={() => setAddTechnicienModalDisplay(true)}>Ajouter un Technicien</Button>
 
               <AddTechnicien

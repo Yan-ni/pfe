@@ -71,10 +71,10 @@ export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnic
           Email
         </Input>
         <Input
-        dataListOptions={["012","152","001","160"]}
+        dataListOptions={["001","002","003","004"]}
         list="datalist"
         id="id fournisseur"
-        placeholder="845"
+        placeholder="005"
         value={idFournisseur}
         onChange={(e) => setIdFournisseur(e.target.value)}>
           fournisseur

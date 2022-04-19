@@ -9,9 +9,15 @@ function Equipement() {
   const [addEquipementModalDisplay, setAddEquipementModalDisplay] = useState(false);
   const [searchText, setSearchText] = useState();
 
+  const { equipementStore } = useContext(APIStoreContext);
+
+  useEffect(() => {
+    equipementStore.loadEquipements();
+  }, []);
+
   return ( <>
               <div className="page">        
-              <h1>Equipement</h1>
+              <h1>Equipements</h1>
               <Button onClick={() => setAddEquipementModalDisplay(true)}>Ajouter un Equipement</Button>
 
               <AddEquipement
