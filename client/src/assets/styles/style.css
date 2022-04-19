@@ -178,6 +178,15 @@ span {
   color: var(--tritary-color);
 }
 
+.input input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.input input[type="date"]{
+  color: var(--tritary-color);
+}
+
+
 /* search input */
 .searchInput {
 	margin-top: 35px;
@@ -201,4 +210,70 @@ span {
 
 .searchInput input::placeholder {
 	color: var(--secondary-color);
+}
+
+/* verticalLine */
+
+.verticalLine {
+  border-left: 1px solid #FFF;
+  height: 135px;
+  float: right;
+  margin-top: 79px;
+  margin-left: 25px;
+}
+
+/* page */
+
+.page {
+  padding-top: 30px;
+  padding-left: 30px;
+  float: left;
+}
+
+.page h1 {
+  color: #FFF;
+}
+
+.page button {
+  margin-top: 25px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-groupe-second {
+  display: flex;
+  gap: 20px;
+}
+
+.input-groupe-second > div:nth-child(1) {
+  flex: 2;
+}
+
+.input-groupe-second > div:nth-child(2) {
+  flex: 5;
+}
+
+.input-groupe-second > div:nth-child(3) {
+  flex: 2;
+}
+
+.input-groupe {
+  display: flex;
+  gap: 20px;
+}
+
+.input-groupe > div:nth-child(1) {
+  flex: 2;
+}
+
+.input-groupe > div:nth-child(2) {
+  flex: 3;
+}
+
+.input-groupe > div:nth-child(3) {
+  flex: 4;
 }
