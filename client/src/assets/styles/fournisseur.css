@@ -1,5 +1,6 @@
 .fournisseur {
   padding: 30px;
+  height: 238px;
 }
 
 .fournisseur h1 {
@@ -27,4 +28,53 @@
 
 .input-groupe > div:nth-child(2) {
   flex: 4;
+}
+/* table  */
+
+.flexN {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexN > div:nth-child(2) {
+  flex-grow: 1;
+}
+
+.tableHeader {
+  padding-left: 31px;
+  height: 54px;
+  border-radius: 7px;
+  background-color: var(--Dark-color-300);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.tableRows{
+  display: flex;
+  flex-direction: row;
+  padding-left: 25px;
+  margin-bottom: 25px;
+}
+
+.tableHeader > div:nth-child(1),.tableRows > div:nth-child(1) {
+  flex-grow: 2;
+}
+
+.tableHeader > div:nth-child(2),.tableRows > div:nth-child(2) {
+  flex-grow: 2;
+}
+
+.tableHeader > div:nth-child(3),.tableRows > div:nth-child(3) {
+  flex-grow: 3;
+}
+
+.tableHeader > div:nth-child(4),.tableRows > div:nth-child(4) {
+  flex-grow: 6;
+}
+
+
+.table {
+  margin: 0px 28px 0px 28px;
 }

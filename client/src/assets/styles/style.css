@@ -31,6 +31,10 @@
   background-color: var(--Dark-color-400);
 }
 
+.App > div:nth-child(2) {
+  flex: 1;
+}
+
 /* Typography */
 @font-face {
   font-family: Poppins;
@@ -116,6 +120,7 @@ h6 {
 
 p {
   font-size: 16px;
+  color: var(--secondary-color);
 }
 
 label {
