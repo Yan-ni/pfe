@@ -1,4 +1,5 @@
 import React from 'react'
+import threeDots from '../../assets/images/three-dots.svg'
 
 export default function TableRow({rowsData}) {
   return (<>
@@ -9,6 +10,7 @@ export default function TableRow({rowsData}) {
           <div><p>{data.nom}</p></div>
           <div><p>{data.email}</p></div>
           <div><p>{data.adresse}</p></div>
+          <img className='threeDots' src={threeDots} alt='' />
           </div>
           )
         })}
