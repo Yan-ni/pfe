@@ -37,42 +37,44 @@
 }
 
 .tableHeader {
-  padding-left: 31px;
   min-height: 54px;
+  margin: 0px 28px 15px 28px;
+  padding: 0px 77px 0px 25px;
   border-radius: 7px;
   background-color: var(--Dark-color-300);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-  margin: 0px 28px 15px 28px;
 }
-.tableRows{
+.tableRow{
   display: flex;
   flex-direction: row;
   padding-left: 25px;
   margin-bottom: 25px;
 }
 
-.tableHeader > div:nth-child(1),.tableRows > div:nth-child(1) {
+.tableHeader >p,.tableRow >p {
+  flex:1;
+}
+
+.tableHeader > p:nth-child(1),.tableRow > p:nth-child(1) {
   flex-grow: 2;
 }
 
-.tableHeader > div:nth-child(2),.tableRows > div:nth-child(2) {
+.tableHeader > p:nth-child(2),.tableRow > p:nth-child(2) {
   flex-grow: 2;
 }
 
-.tableHeader > div:nth-child(3),.tableRows > div:nth-child(3) {
+.tableHeader > p:nth-child(3),.tableRow > p:nth-child(3) {
   flex-grow: 3;
 }
 
-.tableHeader > div:nth-child(4),.tableRows > div:nth-child(4) {
+.tableHeader > p:nth-child(4),.tableRow > p:nth-child(4) {
   flex-grow: 6;
 }
 
-
 .tableBody {
-  margin: 0px 28px 28px 28px;
+  margin: 0px 28px 15px 28px;
   bottom: 0px;
   overflow-y: scroll;
 }

@@ -17,7 +17,6 @@ function Fournisseur() {
     {id:123,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:123,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:123,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:123,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:124,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:125,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:126,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
@@ -43,12 +42,12 @@ function Fournisseur() {
           setAddFournisseurModalDisplay={setAddFournisseurModalDisplay} />
         <SearchInput searchParams={["nom", "email"]} onChange={(e) => setSearchText(e.target.value)}/>
       </div>
-        <div className="tableHeader">
-          <div><p>Id</p></div>
-          <div><p>Nom</p></div>
-          <div><p>Email</p></div>
-          <div><p>Adresse</p></div>
-          </div>
+      <div className="tableHeader">
+          <p>Id</p>
+          <p>Nom</p>
+          <p>Email</p>
+          <p>Adresse</p>
+        </div>
         <div className="tableBody">
           <TableRow rowsData={rowsData}/>
           <TableRow rowsData={rowsData}/>
