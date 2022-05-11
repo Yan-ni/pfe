@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import threeDots from '../../assets/images/three-dots.svg'
 import DropDownOptions from './DropDownOptions';
 
-export default function TableRow({rowsData}) {
+export default function TableRow({rowsData, setRowsData}) {
   const [dropdown, setDropdown] = useState(null);
   const displayClickOption = (index) => {
     setDropdown((prev) => {
         return prev === index ? null : index;
     });
-    console.log('clicked', index);
 };
   return (<>
           {rowsData.map((data,index)=>{      
@@ -21,7 +20,7 @@ export default function TableRow({rowsData}) {
             <div className='dropDown'>
             <img className='threeDotsIcon' src={threeDots} alt='' onClick={()=>displayClickOption(index)}/>
               <div className={dropdown === index ? 'dropDownMenu' : 'hidden'} style={{ display: dropdown === index ? 'block' : 'none' }}>
-                  <DropDownOptions />
+                  <DropDownOptions rowsData={rowsData} updateRowsData={setRowsData} id={index} displayClickOption={displayClickOption}/>
               </div>    
             </div>
           </div>

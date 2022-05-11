@@ -11,6 +11,11 @@ function Fournisseur() {
   const [addFournisseurModalDisplay, setAddFournisseurModalDisplay] = useState(false);
   const [searchText, setSearchText] = useState();
   const [rowsData, setRowsData] = useState([
+    {id:125,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:126,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:127,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:128,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:133,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"}, 
     {id:123,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},
     {id:123,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:123,nom:"algerie telecom",email:"contact@algerie-telecom.com",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
@@ -49,9 +54,7 @@ function Fournisseur() {
           <p>Adresse</p>
         </div>
         <div className="tableBody">
-          <TableRow rowsData={rowsData}/>
-          <TableRow rowsData={rowsData}/>
-          <TableRow rowsData={rowsData}/>
+          <TableRow rowsData={rowsData} setRowsData={setRowsData}/>
         </div>
     </div>
   </>
