@@ -16,7 +16,7 @@
   flex-direction: column;
   gap: 20px;
 }
-
+/* ajouter fournisseur */
 .input-groupe {
   display: flex;
   gap: 20px;
@@ -27,6 +27,23 @@
 }
 
 .input-groupe > div:nth-child(2) {
+  flex: 4;
+}
+/* modifier fournisseur */
+.modifier-input-groupe {
+  display: flex;
+  gap: 20px;
+}
+
+.modifier-input-groupe > div:nth-child(1) {
+  flex: 1;
+}
+
+.modifier-input-groupe > div:nth-child(2) {
+  flex: 3;
+}
+
+.modifier-input-groupe > div:nth-child(3) {
   flex: 4;
 }
 /* table  */
@@ -76,6 +93,7 @@
 .tableBody {
   margin: 0px 28px 15px 28px;
   bottom: 0px;
+  min-height: 150px;
   overflow-y: scroll;
 }
 

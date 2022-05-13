@@ -20,7 +20,11 @@ export default function TableRow({rowsData, setRowsData}) {
             <div className='dropDown'>
             <img className='threeDotsIcon' src={threeDots} alt='' onClick={()=>displayClickOption(index)}/>
               <div className={dropdown === index ? 'dropDownMenu' : 'hidden'} style={{ display: dropdown === index ? 'block' : 'none' }}>
-                  <DropDownOptions rowsData={rowsData} updateRowsData={setRowsData} id={index} displayClickOption={displayClickOption}/>
+                  <DropDownOptions 
+                    rowsData={rowsData} 
+                    updateRowsData={setRowsData} 
+                    idx={index} 
+                    displayClickOption={displayClickOption}/>
               </div>    
             </div>
           </div>
