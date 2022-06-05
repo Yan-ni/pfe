@@ -1,18 +1,23 @@
-import React, { useState } from 'react'
-import '../assets/styles/sideBarNav.css';
-import { NavLink } from 'react-router-dom';
-import hamburgerMenu from '../assets/images/hamburger-menu.svg';
+import React, { useState } from "react";
+import "../assets/styles/sideBarNav.css";
+import { NavLink } from "react-router-dom";
+import hamburgerMenu from "../assets/images/hamburger-menu.svg";
 
 export default function SideBarNav() {
   const [collapsed, setCollapsed] = useState(false);
 
   const toggleCollapsed = () => setCollapsed(!collapsed);
 
-  const isActiveClass = ({isActive}) => isActive ? "selected" : "";
+  const isActiveClass = ({ isActive }) => (isActive ? "selected" : "");
 
   return (
-    <div className={`sideBar-container ${collapsed ? 'collapsed' : ''}`}>
-      <img className="hamburgerMenu" src={hamburgerMenu} alt="toggle side bar" onClick={toggleCollapsed} />
+    <div className={`sideBar-container ${collapsed ? "collapsed" : ""}`}>
+      <img
+        className="hamburgerMenu"
+        src={hamburgerMenu}
+        alt="toggle side bar"
+        onClick={toggleCollapsed}
+      />
       <nav className="sideBar-nav">
         <ul>
           <NavLink to="/" className={isActiveClass}>
@@ -33,13 +38,25 @@ export default function SideBarNav() {
             </li>
           </NavLink>
 
-          <NavLink to="/tickets" className={isActiveClass}>
+          <NavLink to="/plateforms" className={isActiveClass}>
             <li>
-              <h6>Tickets</h6>
+              <h6>Plateforms</h6>
+            </li>
+          </NavLink>
+
+          <NavLink to="/FicheCuratif" className={isActiveClass}>
+            <li>
+              <h6>Fiche Curatif</h6>
+            </li>
+          </NavLink>
+
+          <NavLink to="/FichePreventif" className={isActiveClass}>
+            <li>
+              <h6>Fiche Preventif</h6>
             </li>
           </NavLink>
         </ul>
       </nav>
     </div>
-  )
+  );
 }

@@ -1,6 +1,14 @@
 import "./assets/styles/style.css";
 import { Routes, Route } from "react-router-dom";
-import { Fournisseur, Technicien, Equipement, Contrat, PlateForm, Ticket } from './pages';
+import {
+  Fournisseur,
+  Technicien,
+  Equipement,
+  Contrat,
+  PlateForm,
+  FicheCuratif,
+  FichePreventif,
+} from "./pages";
 import { APIStoreProvider } from "./APIStoreContext";
 import SideBarNav from "./components/SideBarNav";
 
@@ -20,7 +28,9 @@ function App() {
 
           <Route path="/plateformes" element={<PlateForm />} />
 
-          <Route path="/tickets" element={<Ticket />} />
+          <Route path="/fiche-curative" element={<FicheCuratif />} />
+
+          <Route path="/fiche-preventive" element={<FichePreventif />} />
         </Routes>
       </APIStoreProvider>
     </div>
