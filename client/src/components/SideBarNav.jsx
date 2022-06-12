@@ -44,6 +44,12 @@ export default function SideBarNav() {
             </li>
           </NavLink>
 
+          <NavLink to="/contrats" className={isActiveClass}>
+            <li>
+              <h6>Contrats</h6>
+            </li>
+          </NavLink>
+
           <NavLink to="/FicheCuratif" className={isActiveClass}>
             <li>
               <h6>Fiche Curatif</h6>

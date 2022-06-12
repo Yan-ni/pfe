@@ -11,7 +11,7 @@ function Model({ display, title, children, onDismissButton, actionButton, onActi
         <div className="modal-body">{children}</div>
 
         <div className="modal-footer">
-          <Button type="secondary" onClick={onDismissButton}>Annuler</Button>
+          <Button type="secondary-btn" onClick={onDismissButton}>Annuler</Button>
           <Button onClick={onActionButton}>{actionButton}</Button>
         </div>
       </div>

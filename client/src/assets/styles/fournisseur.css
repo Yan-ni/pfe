@@ -1,20 +1,11 @@
-.fournisseur {
-  padding: 30px;
-  width: 100%;
+.fournisseur-header{
+  display: grid;
+  grid-template-columns: 10% 20% 25% 45%;
 }
 
-.fournisseur h1 {
-  color: #FFF;
-}
-
-.fournisseur button {
-  margin-top: 25px;
-}
-
-.modal-body {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.fournisseur-row{
+  display: grid;
+  grid-template-columns: 10% 20% 25% 40% 5%;
 }
 
 .input-groupe {
@@ -30,31 +21,3 @@
   flex: 4;
 }
 
-.table-container{
-  margin-top: 50px;
-}
-
-.table-header,
-.table-row{
-  height: 50px;
-  width: 100%;
-  color: #FFF;
-  align-items: center;
-}
-
-.table-header{
-  display: grid;
-  grid-template-columns: 10% 20% 25% 45%;
-}
-
-.table-row{
-  display: grid;
-  grid-template-columns: 10% 20% 25% 40% 5%;
-}
-
-.table-row p{
-  width: max-content;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}

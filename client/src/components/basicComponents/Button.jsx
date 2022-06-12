@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Button ({ children, type="primary", ...props }) {
+function Button({ children, type = "primary-btn", ...props }) {
   return (
-    <button className={`button ${type === 'secondary' ? 'secondary-btn' : ''}`} {...props}>{children}</button>
+    <button className={`button ${type}`} {...props}>{children}</button>
   );
 }
 

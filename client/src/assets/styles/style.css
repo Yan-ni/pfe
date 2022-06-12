@@ -133,6 +133,87 @@ span {
 }
 
 /* Globals */
+
+/* Page classes */
+.page-container {
+  padding: 30px;
+  width: 100%;
+}
+
+.page-header{
+  display: grid;
+  grid-template-areas: "title header-right-side"
+                       "add-btn header-right-side"
+                       "search-bar header-right-side";
+  grid-template-columns: 230px calc(100% - 230px);
+}
+
+.page-container h1 {
+  grid-area: title;
+  color: #fff;
+}
+
+.page-container button {
+  grid-area: add-btn;
+  margin-top: 20px;
+}
+
+.search-bar{
+  grid-area: search-bar;
+}
+
+.header-right-side{
+  grid-area: header-right-side;
+  display: flex;
+}
+
+.header-right-side span{
+  display: block;
+  width: 2px;
+  height: 80%;
+  background-color: white;
+  border-radius: 5px;
+  margin: 15px 40px;
+}
+
+.header-right-side > img{
+  width: 45px;
+  height: 45px;
+  margin-top: 20px;
+}
+
+.header-right-side > img:hover{
+  background-color: var(--Dark-color-200);
+  cursor: pointer;
+}
+
+.filter-btn-group{
+  display: flex;
+  height: fit-content;
+  gap: 30px;
+}
+
+/* scrollbar */
+  /* Firefox */
+  * {
+    scrollbar-width: none;
+    scrollbar-color: var(--Dark-color-200) #ffffff00;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--Dark-color-200);
+  }
+
+/* button */
 .button {
   color: #FFF;
   background-color: var(--primary-color);
@@ -141,7 +222,6 @@ span {
   padding: 10px 20px;
 }
 
-/* button */
 .button:hover {
   background-color: var(--quaternary-color);
   cursor: pointer;
@@ -154,6 +234,16 @@ span {
 .secondary-btn {
   background: var(--secondary-color);
   color: var(--Dark-color-400);
+}
+
+.filter-btn{
+  background-color: var(--Dark-color-300);
+  display: flex;
+  gap: 15px;
+}
+
+.filter-btn:hover{
+  background-color: var(--Dark-color-200);
 }
 
 /* input */
@@ -176,4 +266,65 @@ span {
 
 .input input::placeholder {
   color: var(--tritary-color);
+}
+
+/* search bar */
+.search-bar{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search-bar input{
+  background-color: #ffffff00;
+  color: var(--secondary-color);
+  border: none;
+  border-bottom: 2px var(--Dark-color-200) solid;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+}
+
+.search-bar input:focus{
+  outline: none;
+}
+
+.search-bar img{
+  color: var(--Dark-color-200);
+  width: 35px;
+  height: 25px;
+}
+
+/* table */
+.table-container {
+  margin: 30px 0;
+}
+
+.table-header,
+.table-row {
+  height: 50px;
+  width: 100%;
+  color: #fff;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.table-header {
+  background-color: var(--Dark-color-200);
+  border-radius: 10px;
+}
+
+.table-row{ 
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.row-item{
+  /* cause ellipsis works only on widths with "pixels" not "%" */
+  width: inherit;
+}
+
+.table-row p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
