@@ -1,22 +1,24 @@
 import React, { useState }  from 'react'
 import ModifierFournisseur from '../fournisseur/ModifierFournisseur';
+import ModifierTechnicien from '../technicien/ModifierTechnicien';
 
-export default function OptionButton({ rowsData, updateRowsData, idx, displayClickOption, setModifierFournisseurModalDisplay}) {
+export default function OptionButton({ rowsData, updateRowsData, idx, displayClickOption, setModifierFournisseurModalDisplay, page}) {
 
   const [ModifierModalDisplay, setModifierModalDisplay] = useState(false);  
 
   const editRow = () => {
     setModifierModalDisplay(true);
+    console.log(idx);
   }
   const deleteRow = () => {
     updateRowsData(rowsData => rowsData.filter((rowsData, index) => index !== idx));
     displayClickOption();
   }
 
-  return (
-            <>
-                <button className='dropDownOption' onClick={() => editRow()}>Modifier</button>
-                <button className='dropDownOption' onClick={() => deleteRow()}>Supprimer</button>
+  const displayModifierModal = (page,ModifierModalDisplay,setModifierModalDisplay,displayClickOption,idx,rowsData,updateRowsData) => {
+    switch (page) {
+      case "fournisseur":
+        return(
                 <ModifierFournisseur
                   ModifierModalDisplay={ModifierModalDisplay}
                   setModifierModalDisplay={setModifierModalDisplay}
@@ -25,6 +27,25 @@ export default function OptionButton({ rowsData, updateRowsData, idx, displayCli
                   rowsData={rowsData} 
                   updateRowsData={updateRowsData} 
                    />
+        )
+      case "technicien":
+        return(
+                <ModifierTechnicien
+                  ModifierModalDisplay={ModifierModalDisplay}
+                  setModifierModalDisplay={setModifierModalDisplay}
+                  displayClickOption={displayClickOption}
+                  index={idx}
+                  rowsData={rowsData} 
+                  updateRowsData={updateRowsData} 
+                   />
+      )
+    }
+  }
+  return (
+            <>
+                <button className='dropDownOption' onClick={() => editRow()}>Modifier</button>
+                <button className='dropDownOption' onClick={() => deleteRow()}>Supprimer</button>
+                {displayModifierModal(page,ModifierModalDisplay,setModifierModalDisplay,displayClickOption,idx,rowsData,updateRowsData)}
             </>
   )
 } 

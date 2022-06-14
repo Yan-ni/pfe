@@ -8,6 +8,8 @@ export default function ModifierFournisseur({ ModifierModalDisplay, setModifierM
       }
     const handleDismissButton = () => {
     setModifierModalDisplay(false);
+    console.log(rowsData);
+    console.log(index);
     displayClickOption();
   }
 
