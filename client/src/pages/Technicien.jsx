@@ -9,13 +9,13 @@ import TableRow from "../components/basicComponents/TableRow";
 
 function Technicien() {
   const [addTechnicienModalDisplay, setAddTechnicienModalDisplay] = useState(false);
-  const [searchText, setSearchText] = useState();
+  const [searchText, setSearchText] = useState('');
 
   const [rowsData, setRowsData] = useState([
-    {id:125,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:126,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:127,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:128,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:125,nom:"algerie telecom",prenom:"mohamed anis kheddar",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:126,nom:"orange france",prenom:"anis bellil",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:127,nom:"free",prenom:"beghad bounejah",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:128,nom:"american build",prenom:"wassim bellani",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:129,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"}, 
     {id:130,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},
     {id:131,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
@@ -30,12 +30,30 @@ function Technicien() {
     {id:140,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:141,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",fournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                     
   ])
+  const [rowsDataDisplayed, setRowsDataDisplayed]=useState(rowsData) ;
 
   const { technicienStore } = useContext(APIStoreContext);
 
   useEffect(() => {
     technicienStore.loadTechniciens();
   }, []);
+
+  useEffect(() => {
+    setRowsDataDisplayed(rowsData);
+  }, [rowsData]);
+
+  const onchangeSearchInput = (searchText) => {
+    const filtere = rowsData.filter(element => {
+      return element.id.toString().toLowerCase().includes(searchText.toLowerCase())
+      ||element.nom.toLowerCase().includes(searchText.toLowerCase())
+      ||element.prenom.toLowerCase().includes(searchText.toLowerCase())
+      ||element.telephone.toLowerCase().includes(searchText.toLowerCase())
+      ||element.email.toLowerCase().includes(searchText.toLowerCase())
+      ||element.fournisseur.toLowerCase().includes(searchText.toLowerCase())
+     })
+    setSearchText(searchText);
+    setRowsDataDisplayed(filtere);
+  }
 
   return (  
     <>
@@ -47,7 +65,11 @@ function Technicien() {
               <AddTechnicien
                 addTechnicienModalDisplay={addTechnicienModalDisplay}
                 setAddTechnicienModalDisplay={setAddTechnicienModalDisplay} />
-              <SearchInput searchParams={["id", "nom", "prenom"]} onChange={(e) => setSearchText(e.target.value)}/>
+              <SearchInput 
+              searchParams={["id", "nom", "prenom"]} 
+              onChange={(e) => onchangeSearchInput(e.target.value)}
+              rowsDataDisplayed={rowsDataDisplayed}
+              setRowsDataDisplayed={setRowsDataDisplayed}/>
               </div>
           <div className="tableHeaderTechnicien">
           <p>Id</p>
@@ -59,7 +81,7 @@ function Technicien() {
           <p>Adresse</p>
         </div>
         <div className="tableBody">
-          <TableRow rowsData={rowsData} setRowsData={setRowsData} page="technicien"/>
+          <TableRow rowsData={rowsDataDisplayed} setRowsData={setRowsData} page="technicien"/>
         </div>
     </div>
             </>
