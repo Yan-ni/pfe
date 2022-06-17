@@ -8,14 +8,13 @@ export default function OptionButton({ rowsData, updateRowsData, idx, displayCli
 
   const editRow = () => {
     setModifierModalDisplay(true);
-    console.log(idx);
   }
   const deleteRow = () => {
     updateRowsData(rowsData => rowsData.filter((rowsData, index) => index !== idx));
     displayClickOption();
   }
 
-  const displayModifierModal = (page,ModifierModalDisplay,setModifierModalDisplay,displayClickOption,idx,rowsData,updateRowsData) => {
+  const displayModifierModal = () => {
     switch (page) {
       case "fournisseur":
         return(
@@ -45,7 +44,7 @@ export default function OptionButton({ rowsData, updateRowsData, idx, displayCli
             <>
                 <button className='dropDownOption' onClick={() => editRow()}>Modifier</button>
                 <button className='dropDownOption' onClick={() => deleteRow()}>Supprimer</button>
-                {displayModifierModal(page,ModifierModalDisplay,setModifierModalDisplay,displayClickOption,idx,rowsData,updateRowsData)}
+                {displayModifierModal()}
             </>
   )
 } 

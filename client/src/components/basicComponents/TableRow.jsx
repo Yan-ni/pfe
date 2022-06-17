@@ -26,7 +26,7 @@ export default function TableRow({rowsData, setRowsData, page}) {
           <p>{data.nom}</p>
           <p>{data.prenom}</p>
           <p>{data.telephone}</p>
-          <p>{data.fournisseur}</p>
+          <p>{data.idFournisseur}</p>
           <p>{data.email}</p>
           <p>{data.adresse}</p>
       </>)

@@ -2,7 +2,18 @@ import React, { useState, useContext } from 'react';
 import { Modal, Input } from '../basicComponents';
 
 export default function ModifierTechnicien({ ModifierModalDisplay, setModifierModalDisplay, displayClickOption, index, rowsData, updateRowsData }) {
-    const handleActionButton = () => {
+  const [id,setId]=useState(rowsData[index].id);
+  const [nom,setNom]=useState(rowsData[index].nom);
+  const [prenom,setPrenom]=useState(rowsData[index].prenom);
+  const [email,setEmail]=useState(rowsData[index].email);
+  const [adresse,setAdresse]=useState(rowsData[index].adresse);
+  const [telephone,setTelephone]=useState(rowsData[index].telephone);  
+  const [idFournisseur,setIdFournisseur]=useState(rowsData[index].idFournisseur);
+
+  const handleActionButton = () => {
+    let newRowsData = [...rowsData];
+    newRowsData[index] = {id: id,nom: nom, prenom:prenom, telephone:telephone,email:email,idFournisseur:idFournisseur,adresse:adresse}  
+    updateRowsData(newRowsData);
         setModifierModalDisplay(false);
         displayClickOption();
       }
@@ -21,22 +32,19 @@ export default function ModifierTechnicien({ ModifierModalDisplay, setModifierMo
             <div className="input-groupe">
         <Input
           id="id"
-          placeholder="id"
-          value={rowsData[index].id}
+          defaultValue={rowsData[index].id}
           onChange={(e) => setId(e.target.value)}>
           id
         </Input>
         <Input
           id="nom"
-          placeholder="john"
-          value={rowsData[index].nom}
+          defaultValue={rowsData[index].nom}
           onChange={(e) => setNom(e.target.value)}>
           Nom
         </Input>
         <Input
         id="prenom"
-        placeholder="mike doe"
-        value={rowsData[index].prenom}
+        defaultValue={rowsData[index].prenom}
         onChange={(e) => setPrenom(e.target.value)}>
           prenom
         </Input>
@@ -44,16 +52,14 @@ export default function ModifierTechnicien({ ModifierModalDisplay, setModifierMo
       <div className="input-groupe-second">
       <Input
           id="telephone"
-          placeholder="0555451157"
-          value={rowsData[index].telephone}
+          defaultValue={rowsData[index].telephone}
           onChange={(e) => setTelephone(e.target.value)}>
           telephone
         </Input>
         <Input
         id="email"
         type="email"
-        placeholder="contact@email.com"
-        value={rowsData[index].email}
+        defaultValue={rowsData[index].email}
         onChange={(e) => setEmail(e.target.value)}>
           Email
         </Input>
@@ -61,16 +67,14 @@ export default function ModifierTechnicien({ ModifierModalDisplay, setModifierMo
         dataListOptions={["001","002","003","004"]}
         list="datalist"
         id="id fournisseur"
-        placeholder="005"
-        value={rowsData[index].idFournisseur}
+        defaultValue={rowsData[index].idFournisseur}
         onChange={(e) => setIdFournisseur(e.target.value)}>
           fournisseur
         </Input>
       </div>
       <Input 
         id="adresse"
-        placeholder="Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"
-        value={rowsData[index].adresse}
+        defaultValue={rowsData[index].adresse}
         onChange={(e) => setAdresse(e.target.value)}>
         Adresse
       </Input>
