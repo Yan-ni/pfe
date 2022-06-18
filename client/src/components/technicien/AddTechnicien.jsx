@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Modal, Input } from '../basicComponents';
 import { APIStoreContext } from '../../APIStoreContext';
 
-export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnicienModalDisplay }) {
+export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnicienModalDisplay ,setRowsData}) {
   const [nom, setNom] = useState('');
   const [telephone, setTelephone] = useState('');
   const [id, setId] = useState('');
@@ -20,16 +20,28 @@ export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnic
   */
   const generateRandomId = () => Math.floor(Math.random() * 999).toString();
 
+  const handleActionButton = () => {
+    let newRow = {id: id,nom: nom, prenom:prenom, telephone:telephone,email:email,idFournisseur:idFournisseur,adresse:adresse};
+    setRowsData(rowsData => [...rowsData, newRow]);
+    setNom('');  
+    setTelephone('');  
+    setId('');  
+    setPrenom('');  
+    setEmail('');  
+    setAdresse('');  
+    setIdFournisseur('');  
+    setAddTechnicienModalDisplay(false);
+    // technicienStore
+    // .addTechnicien({id: generateRandomId(), id, nom, prenom, email, telephone, idFournisseur, adresse})
+    // .then(() => setAddTechnicienModalDisplay(false))
+      }
+
   return (
     <Modal
       display={addTechnicienModalDisplay}
       title="Ajouter un technicien"
       actionButton="Ajouter"
-      onActionButton={() => {
-        technicienStore
-          .addTechnicien({id: generateRandomId(), id, nom, prenom, email, telephone, idFournisseur, adresse})
-          .then(() => setAddTechnicienModalDisplay(false))
-      }}
+      onActionButton={() => handleActionButton()}
       onDismissButton={() => setAddTechnicienModalDisplay(false)}>
       <div className="input-groupe">
         <Input

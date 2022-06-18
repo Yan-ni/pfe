@@ -12,16 +12,16 @@ function Technicien() {
   const [searchText, setSearchText] = useState('');
 
   const [rowsData, setRowsData] = useState([
-    {id:125,nom:"algerie telecom",prenom:"mohamed anis kheddar",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:126,nom:"orange france",prenom:"anis bellil",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"130",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:127,nom:"free",prenom:"beghad bounejah",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"131",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:128,nom:"american build",prenom:"wassim bellani",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"132",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:129,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"133",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"}, 
-    {id:130,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"134",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},
-    {id:131,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"135",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:132,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"136",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:133,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"137",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
-    {id:134,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"138",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:125,nom:"algerie telecom",prenom:"mohamed anis kheddar",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"001",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:126,nom:"orange france",prenom:"anis bellil",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"002",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:127,nom:"free",prenom:"beghad bounejah",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"003",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:128,nom:"american build",prenom:"wassim bellani",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"004",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:129,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"005",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"}, 
+    {id:130,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"006",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},
+    {id:131,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"007",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:132,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"008",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:133,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"009",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
+    {id:134,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"010",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:135,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"139",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:136,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"140",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
     {id:137,nom:"algerie telecom",prenom:"mohamed alberke",telephone:"0569741028",email:"contact@algerie-telecom.com",idFournisseur:"129",adresse:"Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"},                                      
@@ -64,7 +64,8 @@ function Technicien() {
 
               <AddTechnicien
                 addTechnicienModalDisplay={addTechnicienModalDisplay}
-                setAddTechnicienModalDisplay={setAddTechnicienModalDisplay} />
+                setAddTechnicienModalDisplay={setAddTechnicienModalDisplay}
+                setRowsData={setRowsData} />
               <SearchInput 
               searchParams={["id", "nom", "prenom"]} 
               onChange={(e) => onchangeSearchInput(e.target.value)}
