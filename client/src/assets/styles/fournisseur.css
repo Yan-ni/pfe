@@ -32,6 +32,14 @@
     flex: 4;
   }
   /* table  */
+  .tableRowfournisseur:nth-child(-n + 2) .dropDownMenu,
+  .tableRowfournisseur:nth-last-child(n+3) .dropDownMenu{
+    top: 38px;
+  }
+
+  .tableRowfournisseur:nth-last-child(-n + 2) .dropDownMenu{
+    bottom: 48px;
+  }
   
   .tableRowfournisseur{
     display: flex;
@@ -39,23 +47,33 @@
     padding-left: 25px;
     margin-bottom: 25px;
   }
-  .tableHeader >p,.tableRowfournisseur >p {
+  .tableHeaderFournisseur {
+    min-height: 54px;
+    margin: 0px 28px 15px 28px;
+    padding: 0px 115px 0px 25px;
+    border-radius: 7px;
+    background-color: var(--Dark-color-300);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .tableHeaderFournisseur >p,.tableRowfournisseur >p {
     flex:1;
   }
   
-  .tableHeader > p:nth-child(1),.tableRowfournisseur > p:nth-child(1) {
+  .tableHeaderFournisseur > p:nth-child(1),.tableRowfournisseur > p:nth-child(1) {
+    flex-grow: 1;
+  }
+  
+  .tableHeaderFournisseur > p:nth-child(2),.tableRowfournisseur > p:nth-child(2) {
     flex-grow: 2;
   }
   
-  .tableHeader > p:nth-child(2),.tableRowfournisseur > p:nth-child(2) {
-    flex-grow: 2;
-  }
-  
-  .tableHeader > p:nth-child(3),.tableRowfournisseur > p:nth-child(3) {
+  .tableHeaderFournisseur > p:nth-child(3),.tableRowfournisseur > p:nth-child(3) {
     flex-grow: 3;
   }
   
-  .tableHeader > p:nth-child(4),.tableRowfournisseur > p:nth-child(4) {
+  .tableHeaderFournisseur > p:nth-child(4),.tableRowfournisseur > p:nth-child(4) {
     flex-grow: 6;
   }
   

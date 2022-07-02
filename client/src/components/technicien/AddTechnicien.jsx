@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Modal, Input } from '../basicComponents';
 import { APIStoreContext } from '../../APIStoreContext';
 
-export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnicienModalDisplay ,setRowsData}) {
+export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnicienModalDisplay ,rowsData ,setRowsData ,listeIdFournisseur}) {
   const [nom, setNom] = useState('');
   const [telephone, setTelephone] = useState('');
   const [id, setId] = useState('');
@@ -13,15 +13,26 @@ export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnic
 
   const { technicienStore } = useContext(APIStoreContext);
 
-  /**
-   * I don't know if the Id is provided by the user or it is generated
-   * autonatically by the server. there for now Im just generating the
-   * Id randomly on the client side.
-  */
-  const generateRandomId = () => Math.floor(Math.random() * 999).toString();
+  const generateRandomId = () => {
+    let listeId = rowsData.map(a => a.id);
+    let tmp;
+    for (let int = 0; int < 1000; int++) {
+      if(int<10){
+        tmp="00".concat(int.toString());
+      }else if(9<int<100){
+        tmp="0".concat(int.toString());
+      }else{
+        tmp=int.toString();
+      }
+      if(!listeId.includes(tmp)){
+        break;
+      }
+    }
+    return tmp
+  }
 
   const handleActionButton = () => {
-    let newRow = {id: id,nom: nom, prenom:prenom, telephone:telephone,email:email,idFournisseur:idFournisseur,adresse:adresse};
+    let newRow = {id: generateRandomId(),nom: nom, prenom:prenom, telephone:telephone,email:email,idFournisseur:idFournisseur,adresse:adresse};
     setRowsData(rowsData => [...rowsData, newRow]);
     setNom('');  
     setTelephone('');  
@@ -36,31 +47,34 @@ export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnic
     // .then(() => setAddTechnicienModalDisplay(false))
       }
 
+  const handleDismissButton = () => {
+    setNom('');  
+    setTelephone('');  
+    setId('');  
+    setPrenom('');  
+    setEmail('');  
+    setAdresse('');  
+    setIdFournisseur('');  
+    setAddTechnicienModalDisplay(false);
+      }
+
   return (
     <Modal
       display={addTechnicienModalDisplay}
       title="Ajouter un technicien"
       actionButton="Ajouter"
       onActionButton={() => handleActionButton()}
-      onDismissButton={() => setAddTechnicienModalDisplay(false)}>
+      onDismissButton={() => handleDismissButton()}>
       <div className="input-groupe">
-        <Input
-          id="id"
-          placeholder="id"
-          value={id}
-          onChange={(e) => setId(e.target.value)}>
-          id
-        </Input>
+
         <Input
           id="nom"
-          placeholder="john"
           value={nom}
           onChange={(e) => setNom(e.target.value)}>
           Nom
         </Input>
         <Input
         id="prenom"
-        placeholder="mike doe"
         value={prenom}
         onChange={(e) => setPrenom(e.target.value)}>
           prenom
@@ -69,24 +83,20 @@ export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnic
       <div className="input-groupe-second">
       <Input
           id="telephone"
-          placeholder="0555451157"
           value={telephone}
           onChange={(e) => setTelephone(e.target.value)}>
           telephone
         </Input>
         <Input
         id="email"
-        type="email"
-        placeholder="contact@email.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}>
           Email
         </Input>
         <Input
-        dataListOptions={["001","002","003","004"]}
+        dataListOptions={listeIdFournisseur}
         list="datalist"
         id="id fournisseur"
-        placeholder="005"
         value={idFournisseur}
         onChange={(e) => setIdFournisseur(e.target.value)}>
           fournisseur
@@ -94,7 +104,6 @@ export default function AddTechnicien({ addTechnicienModalDisplay, setAddTechnic
       </div>
       <Input 
         id="adresse"
-        placeholder="Route Nationale n°5, Cinq Maisons, Mohammadia 16130 Alger"
         value={adresse}
         onChange={(e) => setAdresse(e.target.value)}>
         Adresse

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import threeDots from '../../assets/images/three-dots.svg'
 import DropDownOptions from './DropDownOptions';
 
-export default function TableRow({rowsData, setRowsData, page}) {
+export default function TableRow({rowsData, setRowsData, page, listeId}) {
   const [dropdown, setDropdown] = useState(null);
   const [classTableRow, setClassTableRow]=useState("tableRow"+page);
   const displayClickOption = (index) => {
@@ -30,6 +30,22 @@ export default function TableRow({rowsData, setRowsData, page}) {
           <p>{data.email}</p>
           <p>{data.adresse}</p>
       </>)
+      case "plateforme":
+        return(<>
+          <p>{data.id}</p>
+          <p>{data.nom}</p>
+      </>)
+      case "equipement":
+        return(<>
+          <p>{data.numeroDeSerie}</p>
+          <p>{data.codeFRU}</p>
+          <p>{data.nomDequipement}</p>
+          <p>{data.idSite}</p>
+          <p>{data.idPlateforme}</p>
+          <p>{data.severite}</p>
+          <p>{data.date_mise_marche}</p>
+          <p>{data.date_fin_service}</p>
+      </>)
     }
   }
   return (<>
@@ -45,7 +61,8 @@ export default function TableRow({rowsData, setRowsData, page}) {
                     updateRowsData={setRowsData} 
                     idx={index} 
                     displayClickOption={displayClickOption}
-                    page={page}/>
+                    page={page}
+                    listeId={listeId}/>
               </div>    
             </div>
           </div>

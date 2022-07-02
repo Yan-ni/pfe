@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Modal, Input } from '../basicComponents';
 
-export default function ModifierTechnicien({ ModifierModalDisplay, setModifierModalDisplay, displayClickOption, index, rowsData, updateRowsData }) {
+export default function ModifierTechnicien({ ModifierModalDisplay, setModifierModalDisplay, displayClickOption, index, rowsData, updateRowsData ,listeIdFournisseur}) {
   const [id,setId]=useState(rowsData[index].id);
   const [nom,setNom]=useState(rowsData[index].nom);
   const [prenom,setPrenom]=useState(rowsData[index].prenom);
@@ -64,7 +64,7 @@ export default function ModifierTechnicien({ ModifierModalDisplay, setModifierMo
           Email
         </Input>
         <Input
-        dataListOptions={["001","002","003","004"]}
+        dataListOptions={listeIdFournisseur}
         list="datalist"
         id="id fournisseur"
         defaultValue={rowsData[index].idFournisseur}

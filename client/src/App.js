@@ -8,7 +8,7 @@ import {
 	Technicien,
 	Equipement,
 	Contrat,
-	PlateForm,
+	Plateforme,
 	Ticket,
 } from './pages';
 
@@ -26,7 +26,7 @@ function App() {
 
 					<Route path="/contrats" element={<Contrat />} />
 
-					<Route path="/plateformes" element={<PlateForm />} />
+					<Route path="/plateformes" element={<Plateforme />} />
 
 					<Route path="/tickets" element={<Ticket />} />
 				</Routes>

@@ -33,6 +33,14 @@
     flex: 4;
   }
   /* table  */
+  .tableRowtechnicien:nth-child(-n + 2) .dropDownMenu,
+  .tableRowtechnicien:nth-last-child(n+3) .dropDownMenu{
+    top: 38px;
+  }
+
+  .tableRowtechnicien:nth-last-child(-n + 2) .dropDownMenu{
+    bottom: 48px;
+  }
   
   .main {
     display: flex;

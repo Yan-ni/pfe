@@ -33,6 +33,12 @@ export default function SideBarNav() {
             </li>
           </NavLink>
 
+          <NavLink to="/plateformes" className={isActiveClass}>
+            <li>
+              <h6>Plateformes</h6>
+            </li>
+          </NavLink>
+
           <NavLink to="/tickets" className={isActiveClass}>
             <li>
               <h6>Tickets</h6>

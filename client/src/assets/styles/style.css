@@ -290,22 +290,10 @@ margin-top: 25px;
   display: flex;
   flex-direction: column;
  }
-  
- .tableHeader {
-   min-height: 54px;
-  margin: 0px 28px 15px 28px;
-  padding: 0px 115px 0px 25px;
-  border-radius: 7px;
-  background-color: var(--Dark-color-300);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  }
-
 .tableBody {
   margin: 0px 28px 15px 28px;
   bottom: 0px;
-  min-height: 150px;
+  height: 100%;
   overflow-y: scroll;
 }
 
@@ -348,14 +336,6 @@ margin-top: 25px;
   overflow: visible;
   right: 10px;
   z-index: 1;
-}
-
-.tableRowfournisseur:nth-last-child(-n+2) .dropDownMenu{
-  bottom: 30px;
-}
-
-.tableRowfournisseur:not(:nth-last-child(-n+2)) .dropDownMenu{
-  top: 30px;
 }
 
 .dropDownOption{
