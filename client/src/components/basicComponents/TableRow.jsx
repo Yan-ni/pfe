@@ -72,12 +72,15 @@ export default function TableRow({rowsData, setRowsData, page, listeId,moreRowsD
   }
 
   const displayMoreInfo = (page,data,index) =>{
-    let obj={id:"125",nom:"default",email:"default",adresse:"default"};
-    obj=moreRowsData.filter(element => element.id===data.idFournisseur)
-    console.log(index);
-    console.log(obj); 
       switch (page) {
         case "technicien":
+          let obj={id:"125",nom:"default",email:"default",adresse:"default"};
+          for (var i=0;i<moreRowsData.length; i++) {
+            if (moreRowsData[i].id===data.idFournisseur) obj= moreRowsData[i];
+          }
+          // obj=moreRowsData.filter(element => element.id===data.idFournisseur);
+          console.log(index);
+          console.log(obj); 
           return(<>
             <div className="rowInfoFournisseur" key={data.id} style={{ display: arrowId === index ? 'flex' : 'none' }}> 
               <p>nom du fournisseur  :  {obj.nom}</p>
