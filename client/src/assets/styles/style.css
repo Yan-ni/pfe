@@ -220,15 +220,6 @@ span {
 	color: var(--secondary-color);
 }
 
-/* verticalLine */
-
-.verticalLine {
-  border-left: 1px solid #FFF;
-  height: 135px;
-  float: right;
-  margin-top: 79px;
-  margin-left: 25px;
-}
 
 /* page */
 
@@ -322,6 +313,13 @@ margin-top: 25px;
   filter: invert(70%) sepia(3%) saturate(0%) hue-rotate(298deg) brightness(101%) contrast(95%);
   cursor: pointer;
   float: right;
+}
+.moreArrow{
+  width: 30px;
+  height: 23px;
+  filter: invert(70%) sepia(3%) saturate(0%) hue-rotate(298deg) brightness(101%) contrast(95%);
+  cursor: pointer;
+  float: left;
 }
 
 .dropDown{

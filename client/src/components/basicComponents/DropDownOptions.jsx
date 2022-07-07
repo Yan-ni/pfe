@@ -4,7 +4,7 @@ import ModifierTechnicien from '../technicien/ModifierTechnicien';
 import ModifierPlateforme from '../plateforme/ModifierPlateforme';
 import ModifierEquipement from '../equipement/ModifierEquipement';
 
-export default function OptionButton({ rowsData, updateRowsData, idx, displayClickOption, setModifierFournisseurModalDisplay, page, listeIdFournisseur}) {
+export default function OptionButton({ rowsData, updateRowsData, idx, displayClickOption, page, listeIdFournisseur, setArrowId}) {
 
   const [ModifierModalDisplay, setModifierModalDisplay] = useState(false);  
 
@@ -13,6 +13,7 @@ export default function OptionButton({ rowsData, updateRowsData, idx, displayCli
   }
   const deleteRow = () => {
     updateRowsData(rowsData => rowsData.filter((rowsData, index) => index !== idx));
+    setArrowId(null);
     displayClickOption();
   }
 

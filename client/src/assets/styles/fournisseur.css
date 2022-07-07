@@ -47,6 +47,11 @@
     padding-left: 25px;
     margin-bottom: 25px;
   }
+  .rowInfoFournisseur{
+    display: flex;
+    flex-direction: row;
+    padding-left: 25px;
+  }
   .tableHeaderFournisseur {
     min-height: 54px;
     margin: 0px 28px 15px 28px;
@@ -57,7 +62,7 @@
     flex-direction: row;
     align-items: center;
   }
-  .tableHeaderFournisseur >p,.tableRowfournisseur >p {
+  .tableHeaderFournisseur >p,.tableRowfournisseur >p ,.rowInfoFournisseur >p{
     flex:1;
   }
   
@@ -77,4 +82,14 @@
     flex-grow: 6;
   }
   
+  .rowInfoFournisseur > p:nth-child(1) {
+    flex-grow: 1.6;
+  }
   
+  .rowInfoFournisseur > p:nth-child(2) {
+    flex-grow: 2;
+  }
+  
+  .rowInfoFournisseur > p:nth-child(3) {
+    flex-grow: 3;
+  }

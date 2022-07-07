@@ -49,8 +49,8 @@
   
   .tableHeaderTechnicien {
     min-height: 54px;
-    margin: 0px 28px 15px 28px;
-    padding: 0px 115px 0px 25px;
+    margin: 0px 28px 5px 28px;
+    padding: 0px 115px 0px 45px;
     border-radius: 7px;
     background-color: var(--Dark-color-300);
     display: flex;
@@ -60,39 +60,44 @@
   .tableRowtechnicien{
     display: flex;
     flex-direction: row;
-    padding-left: 25px;
-    margin-bottom: 25px;
+    padding-left: 15px;
+    margin-top: 25px;
   }
-  
+  .rowInfoFournisseur{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    padding-left: 25px;
+  }
   .tableHeaderTechnicien >p,.tableRowtechnicien >p {
     flex:1;
   }
   
-  .tableHeaderTechnicien > p:nth-child(1),.tableRowtechnicien > p:nth-child(1) {
+  .tableHeaderTechnicien > p:nth-child(1),.tableRowtechnicien > p:nth-child(3) {
     flex-grow: 1;
   }
   
-  .tableHeaderTechnicien > p:nth-child(2),.tableRowtechnicien > p:nth-child(2) {
+  .tableHeaderTechnicien > p:nth-child(2),.tableRowtechnicien > p:nth-child(4) {
     flex-grow: 3;
   }
   
-  .tableHeaderTechnicien > p:nth-child(3),.tableRowtechnicien > p:nth-child(3) {
+  .tableHeaderTechnicien > p:nth-child(3),.tableRowtechnicien > p:nth-child(5) {
     flex-grow: 3;
   }
   
-  .tableHeaderTechnicien > p:nth-child(4),.tableRowtechnicien > p:nth-child(4) {
+  .tableHeaderTechnicien > p:nth-child(4),.tableRowtechnicien > p:nth-child(6) {
     flex-grow: 2.5;
   }
 
-  .tableHeaderTechnicien > p:nth-child(5),.tableRowtechnicien > p:nth-child(5) {
+  .tableHeaderTechnicien > p:nth-child(5),.tableRowtechnicien > p:nth-child(7) {
     flex-grow: 2;
   }
   
-  .tableHeaderTechnicien > p:nth-child(6),.tableRowtechnicien > p:nth-child(6) {
+  .tableHeaderTechnicien > p:nth-child(6),.tableRowtechnicien > p:nth-child(8) {
     flex-grow: 5;
   }
   
-  .tableHeaderTechnicien > p:nth-child(7),.tableRowtechnicien > p:nth-child(7) {
+  .tableHeaderTechnicien > p:nth-child(7),.tableRowtechnicien > p:nth-child(9) {
     flex-grow: 6;
   }
   
