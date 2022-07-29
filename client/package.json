@@ -2,7 +2,7 @@
   "name": "pfe",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
@@ -10,6 +10,7 @@
     "axios": "^0.26.1",
     "mobx": "^6.5.0",
     "mobx-react": "^7.3.0",
+    "pfe": "file:..",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",

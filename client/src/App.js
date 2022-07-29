@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import './assets/styles/style.css';
 import { Routes, Route } from 'react-router-dom';
 import { APIStoreProvider } from './APIStoreContext.jsx';
 import SideBarNav from './components/SideBarNav.jsx';
+import Login from './components/Login';
 import {
 	Fournisseur,
 	Technicien,
@@ -13,9 +14,13 @@ import {
 } from './pages';
 
 function App() {
+	const [authenticated, setAuthenticated]=useState(false);
 	return (
 		<div className="App">
 			<APIStoreProvider>
+				{!authenticated && <Login setAuthenticated={setAuthenticated}/>}
+				{authenticated &&
+				<> 				
 				<SideBarNav />
 				<Routes>
 					<Route path="/" element={<Fournisseur />} />
@@ -29,7 +34,8 @@ function App() {
 					<Route path="/plateformes" element={<PlateForm />} />
 
 					<Route path="/tickets" element={<Ticket />} />
-				</Routes>
+				</Routes></>
+				}
 			</APIStoreProvider>
 		</div>
 	);

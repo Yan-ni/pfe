@@ -120,6 +120,7 @@ p {
 
 label {
   font-size: 15px;
+  color: #FFF;
 }
 
 span {
@@ -201,4 +202,69 @@ span {
 
 .searchInput input::placeholder {
 	color: var(--secondary-color);
+}
+
+.authentification {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Dark-color-400);
+  border-radius: 10px;
+  width: 200px;
+}
+
+.authentification h4{
+  color: #FFF;
+  margin-bottom: 7px;
+}
+
+.authentification input{
+  margin-bottom: 10px;
+  margin-top: 3px;
+  border-radius: 5px;
+	caret-color: #FFF;
+	border: none;
+  padding-left: 5px;
+  height: 18px;
+}
+
+.authentification h4{
+  text-align: center;
+}
+
+.boutonsSauthenrifier p{
+  float: left;
+  cursor: pointer;
+  color: #FFF;
+  font-size: 15px;
+}
+
+.boutonsSauthenrifier p:hover{
+  color: var(--primary-color);
+}
+
+.boutonsSauthenrifier button{
+  position: fixed;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 0px 3px 2px 3px;
+  bottom: 2px;
+  right: 0px;
+  font-size: 15px;
+}
+
+.boutonsSauthenrifier button:active {
+  transform: translateY(2px);
+}
+
+.boutonsSauthenrifier button:hover {
+  background-color:#7048EC;
+}
+
+.messageDerreur{
+  color: rgb(255, 103, 103);
 }

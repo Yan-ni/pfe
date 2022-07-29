@@ -21,6 +21,12 @@ module.exports = ({
     id: '12345',
     nom: 'nom du site',
   }),
+  Employe.create({
+    nom: 'wassim',
+    prenom: 'bellani',
+    motDePasse: '12345',
+    admin: true,
+  }),
   Panne.create({
     id: '123456789A',
     message_erreur: 'ceci est un message erreur',
