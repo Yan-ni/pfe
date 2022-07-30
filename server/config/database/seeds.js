@@ -1,5 +1,5 @@
 module.exports = ({
-  Fournisseur, IGE, Plateforme, Site, Panne, Contrat, Equipement, Technicien, Ticket,
+  Fournisseur, IGE, Plateforme, Site, Employe, Panne, Contrat, Equipement, Technicien, Ticket,
 }) => () => Promise.all([
   Fournisseur.create({
     id: '123',
@@ -26,6 +26,7 @@ module.exports = ({
     prenom: 'bellani',
     motDePasse: '12345',
     admin: true,
+    isApproved: false,
   }),
   Panne.create({
     id: '123456789A',

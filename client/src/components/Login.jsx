@@ -9,10 +9,9 @@ export default function Login({setAuthenticated}) {
   const [prenom, setPrenom] = useState("");
   const [motDePasse, setMotDePasse] = useState("");
   const [confirmationMDP, setConfirmationMDP] = useState();
-  const [champVide, setChampVide] = useState(false);
-  const [identique, setIdentique] = useState(false);
+  const [waitingApproval, setWaitingApproval] = useState(false);
   const [token, setToken] = useState("");
-  const [identifiantIncorrect, setIdentifiantIncorrect] = useState(false);
+  const [message, setMessage] = useState("");
 
   const changeAuth = () => {
     if(login){
@@ -28,46 +27,38 @@ export default function Login({setAuthenticated}) {
 
   const sendUserData = () => {
     if (!login) {
-      if(!nom || !prenom || !motDePasse){
-        setChampVide(true);
-      }else{
-        setChampVide(false);
         axios
         .post('http://localhost:3546/api/authentication/login/', {nom, prenom, motDePasse})
         .then(res => 
-          {
-            if (res.status==200) {
+          {if (res.status==200) {
               setAuthenticated(true);
               setToken(res.data.accessToken);
           };})
-        .then((error) => console.error(error));
-        
-      } 
+        .then((error) => (error) => console.error(error))
+        .catch(error => {
+            setMessage(error.response.data.error)
+         }); 
     }else{
-      if(!nom || !prenom || !motDePasse || !confirmationMDP){
-        setChampVide(true);
-      }else{
-        setChampVide(false);
-        if(motDePasse!==confirmationMDP){
-          setIdentique(true); 
-        }else{
-          setIdentique(false);
           axios
-          .post('http://localhost:3546/api/authentication/register/', {nom, prenom, motDePasse})
-          .then((error) => console.error(error));
-        }
-      }
+          .post('http://localhost:3546/api/authentication/register/', {nom, prenom, motDePasse, confirmationMDP})
+          .then(res => 
+            {if (res.status==200) {
+                setMessage(res.data);
+                setWaitingApproval(true);
+            };})
+          .catch(error => {
+            setMessage(error.response.data.error)
+         }); 
     }
-
   }
 
   return (
     <>
     <div className="authentification">
-      <h4>{title}</h4>
-      {identifiantIncorrect && <p className="messageDerreur">identifiant ou mot de passe incorrect</p>}
-      {champVide && <p className="messageDerreur">veuillez remplir tous les champs</p>}
-      {identique && <p className="messageDerreur">les mots de passes ne sont pas identiques</p>}
+      {waitingApproval && <p className="messagePositif">votre demande d'enregistrement est en cour de traitement <br />veuillez attendre l'approbation de l'admin</p>}
+      {!waitingApproval &&
+      <><h4>{title}</h4>
+      <p className="messageDerreur">{message}</p>
       <label >nom</label>
       <input 
         id="nom" 
@@ -95,7 +86,7 @@ export default function Login({setAuthenticated}) {
       <div className="boutonsSauthenrifier">
         <p onClick={()=>changeAuth()}>{signUp}</p>
         <button onClick={()=>sendUserData()}>{title}</button>
-      </div>
+      </div></>}
     </div>
     </>
     )
